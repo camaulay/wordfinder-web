@@ -1,5 +1,5 @@
 # wordfinder-web
-[Live Demo](wordfinder-web.netlify.app)
+[Live Demo](https://wordfinder-web.netlify.app)
 
 Finds whole word matches of a given string with letters in any order using a specific [wordlist](https://gist.githubusercontent.com/adamc00/a45beb8a0cb55593220f749838c534d0/raw/fd11dcce5df4098839e19f21c50cc2363b9b7863/words.txt).
 
