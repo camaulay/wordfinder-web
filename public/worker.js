@@ -16,6 +16,13 @@ calculatePermutations = function (string) {
   return permutationsArray
 }
 
+// https://stackoverflow.com/questions/1885557/simplest-code-for-array-intersection-in-javascript
+function intersection(a, b) {
+  return a.filter(Set.prototype.has, new Set(b));
+}
+
 onmessage = function (e) {
-  postMessage({ permutations: calculatePermutations(e.data.string) })
+  const permutations = calculatePermutations(e.data.string)
+  const matchingWords = intersection(e.data.words, permutations)
+  postMessage({ matchingWords: matchingWords })
 }

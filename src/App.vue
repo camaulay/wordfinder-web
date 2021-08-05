@@ -32,9 +32,7 @@ export default {
     this.worker = new Worker('worker.js');  
     this.worker.onmessage = (message => {
       this.isFinding = false
-      this.matchingWords = this.words.filter(word => {
-        return message.data.permutations.includes(word)
-      })
+      this.matchingWords = message.data.matchingWords
     })
   },
 
@@ -42,7 +40,7 @@ export default {
     async findWords (string) {
       if (string.length > 0) {
         this.isFinding = true
-        this.worker.postMessage({ string: string })
+        this.worker.postMessage({ string: string, words: this.words })
       }
     },
 
